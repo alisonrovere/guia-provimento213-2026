@@ -1,0 +1,1645 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Guia Prático — Provimento CNJ 213/2026 · ANOREGRJ</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --navy: #0d1b3e;
+    --navy-light: #1a2f5a;
+    --gold: #c9a227;
+    --gold-light: #f0c84a;
+    --green: #1a6e3a;
+    --green-light: #d4edda;
+    --red: #9b1c1c;
+    --red-light: #fde8e8;
+    --blue: #1e4d7b;
+    --blue-light: #dbeafe;
+    --amber: #92400e;
+    --amber-light: #fef3c7;
+    --gray-50: #f8f9fb;
+    --gray-100: #f1f3f6;
+    --gray-200: #e2e6ef;
+    --gray-300: #c8cfe0;
+    --gray-600: #4b5a72;
+    --gray-700: #334060;
+    --gray-900: #111827;
+    --white: #ffffff;
+    --font-main: 'IBM Plex Sans', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+    --shadow-sm: 0 1px 3px rgba(13,27,62,.08);
+    --shadow-md: 0 4px 16px rgba(13,27,62,.12);
+    --shadow-lg: 0 8px 32px rgba(13,27,62,.16);
+    --radius: 10px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--font-main);
+    background: var(--gray-50);
+    color: var(--gray-900);
+    line-height: 1.65;
+    font-size: 15px;
+  }
+
+  /* ──── TOP BAR ──── */
+  .topbar {
+    background: var(--navy);
+    color: var(--white);
+    padding: 10px 24px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .topbar strong { color: var(--gold-light); }
+
+  /* ──── HEADER ──── */
+  header {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    color: var(--white);
+    padding: 40px 24px 36px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(45deg, transparent, transparent 30px, rgba(255,255,255,.02) 30px, rgba(255,255,255,.02) 31px);
+  }
+  .header-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--gold-light);
+  }
+  .header-logo span.rj { color: var(--white); }
+  .header-sub {
+    font-size: 13px;
+    color: rgba(255,255,255,.7);
+    margin-bottom: 18px;
+    letter-spacing: 0.3px;
+  }
+  header h1 {
+    font-size: clamp(22px, 5vw, 34px);
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1.25;
+  }
+  .provimento-badge {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 13px;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+    letter-spacing: 0.4px;
+  }
+  .header-desc {
+    max-width: 680px;
+    margin: 0 auto;
+    font-size: 14.5px;
+    color: rgba(255,255,255,.85);
+    line-height: 1.6;
+  }
+
+  /* ──── MAIN CONTENT ──── */
+  .container { max-width: 960px; margin: 0 auto; padding: 0 20px 60px; }
+
+  /* ──── ALERTS ──── */
+  .alert {
+    display: flex;
+    gap: 14px;
+    padding: 16px 20px;
+    border-radius: var(--radius);
+    margin: 20px 0;
+    font-size: 14px;
+    line-height: 1.6;
+    border-left: 4px solid;
+  }
+  .alert-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+  .alert-danger { background: var(--red-light); border-color: #c53030; color: var(--red); }
+  .alert-warning { background: var(--amber-light); border-color: #d97706; color: var(--amber); }
+  .alert-info { background: var(--blue-light); border-color: #2563eb; color: var(--blue); }
+  .alert-success { background: var(--green-light); border-color: #16a34a; color: var(--green); }
+  .alert strong { font-weight: 600; }
+
+  /* ──── WELCOME CARD ──── */
+  .welcome-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin: 24px 0;
+    box-shadow: var(--shadow-sm);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .welcome-card strong { color: var(--navy); }
+
+  /* ──── STEPS STRIP ──── */
+  .steps-strip {
+    display: flex;
+    gap: 0;
+    margin: 28px 0;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--gray-200);
+  }
+  .step-item {
+    flex: 1;
+    padding: 14px 10px;
+    text-align: center;
+    background: var(--white);
+    border-right: 1px solid var(--gray-200);
+    font-size: 12.5px;
+    color: var(--gray-600);
+    line-height: 1.4;
+  }
+  .step-item:last-child { border-right: none; }
+  .step-item .step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--gray-200);
+    color: var(--gray-700);
+    font-weight: 700;
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+  .step-item.active .step-num { background: var(--navy); color: var(--white); }
+  .step-item.active { background: var(--gray-50); color: var(--navy); font-weight: 600; }
+
+  /* ──── PRAZOS TABLE ──── */
+  .section-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 28px;
+    margin: 24px 0;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--gray-200);
+  }
+  .section-card h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-card .sub-desc {
+    font-size: 13px;
+    color: var(--gray-600);
+    margin-bottom: 18px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  thead th {
+    background: var(--navy);
+    color: var(--white);
+    padding: 11px 14px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 13px;
+  }
+  tbody tr:nth-child(even) { background: var(--gray-50); }
+  tbody tr:hover { background: var(--blue-light); transition: background .15s; }
+  tbody td {
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--gray-200);
+    color: var(--gray-700);
+  }
+  tbody td strong { color: var(--navy); }
+
+  /* ──── ETAPA HEADER ──── */
+  .etapa-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: var(--navy);
+    color: var(--white);
+    padding: 22px 28px;
+    border-radius: var(--radius) var(--radius) 0 0;
+    margin-top: 32px;
+  }
+  .etapa-num {
+    width: 44px; height: 44px;
+    background: var(--gold);
+    color: var(--navy);
+    font-weight: 800;
+    font-size: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .etapa-header h2 { font-size: 18px; font-weight: 700; line-height: 1.3; }
+  .etapa-header p { font-size: 13px; color: rgba(255,255,255,.75); margin-top: 4px; }
+  .etapa-prazos { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+  .prazo-badge {
+    font-size: 11.5px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+    background: rgba(255,255,255,.12);
+    border: 1px solid rgba(255,255,255,.25);
+  }
+
+  .etapa-body {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-top: none;
+    border-radius: 0 0 var(--radius) var(--radius);
+    overflow: hidden;
+  }
+
+  .objetivo-box {
+    background: var(--blue-light);
+    border-bottom: 1px solid var(--gray-200);
+    padding: 16px 24px;
+    font-size: 14px;
+    color: var(--blue);
+    line-height: 1.6;
+  }
+  .objetivo-box strong { font-weight: 700; }
+
+  /* ──── ITEM ROWS ──── */
+  .item-row {
+    border-bottom: 1px solid var(--gray-100);
+  }
+  .item-row:last-child { border-bottom: none; }
+
+  .item-header {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    cursor: pointer;
+    user-select: none;
+  }
+  .item-num {
+    width: 56px;
+    padding: 18px 0;
+    text-align: center;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--navy);
+    background: var(--gray-50);
+    border-right: 1px solid var(--gray-200);
+    flex-shrink: 0;
+    font-family: var(--font-mono);
+  }
+  .item-title {
+    flex: 1;
+    padding: 16px 20px;
+    font-weight: 600;
+    font-size: 14.5px;
+    color: var(--navy);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .item-icon { font-size: 18px; }
+  .item-toggle {
+    padding: 16px 20px;
+    color: var(--gray-600);
+    font-size: 18px;
+    transition: transform .2s;
+  }
+  .item-row.open .item-toggle { transform: rotate(180deg); }
+
+  .item-body {
+    display: none;
+    padding: 0 20px 20px 76px;
+    font-size: 14px;
+    color: var(--gray-700);
+    line-height: 1.7;
+  }
+  .item-row.open .item-body { display: block; }
+
+  .item-body h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 16px 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .item-body ul {
+    list-style: none;
+    padding: 0;
+  }
+  .item-body ul li {
+    padding: 5px 0 5px 4px;
+    border-bottom: 1px solid var(--gray-100);
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  .item-body ul li:last-child { border-bottom: none; }
+  .item-body p { margin: 8px 0; }
+  .item-body .tip {
+    background: var(--amber-light);
+    border-left: 3px solid var(--gold);
+    padding: 10px 14px;
+    border-radius: 0 6px 6px 0;
+    font-size: 13px;
+    color: var(--amber);
+    margin-top: 14px;
+  }
+
+  /* ──── DECLARAÇÃO BOX ──── */
+  .decl-box {
+    margin: 0;
+    border-top: 2px solid var(--gold);
+  }
+  .decl-header {
+    background: linear-gradient(90deg, var(--navy) 0%, var(--navy-light) 100%);
+    color: var(--white);
+    padding: 14px 24px;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .decl-body {
+    background: var(--gray-50);
+    padding: 18px 24px;
+    font-size: 14px;
+    color: var(--gray-700);
+    line-height: 1.7;
+  }
+
+  /* ──── PASSO FINAL ──── */
+  .passo-final {
+    background: linear-gradient(135deg, #16a34a 0%, #1a6e3a 100%);
+    color: var(--white);
+    padding: 24px 28px;
+    border-radius: var(--radius);
+    margin: 24px 0;
+  }
+  .passo-final h3 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .passo-final p { font-size: 14px; color: rgba(255,255,255,.9); line-height: 1.7; }
+
+  /* ──── DOSSIE ──── */
+  .dossie-card {
+    background: var(--navy);
+    color: var(--white);
+    border-radius: var(--radius);
+    padding: 28px;
+    margin: 32px 0;
+  }
+  .dossie-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--gold-light);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dossie-card .sub { font-size: 13px; color: rgba(255,255,255,.65); margin-bottom: 18px; }
+  .dossie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+  .dossie-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 13.5px;
+    line-height: 1.5;
+  }
+  .dossie-item span { font-size: 18px; flex-shrink: 0; }
+  .dossie-classes {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  .dossie-class {
+    flex: 1;
+    min-width: 220px;
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 13.5px;
+    line-height: 1.6;
+  }
+  .dossie-class strong { color: var(--gold-light); }
+
+  /* ──── GLOSSÁRIO ──── */
+  .glossario-header {
+    background: var(--navy);
+    color: var(--white);
+    padding: 22px 28px;
+    border-radius: var(--radius) var(--radius) 0 0;
+    margin-top: 32px;
+  }
+  .glossario-header h2 {
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .glossario-header p { font-size: 13.5px; color: rgba(255,255,255,.7); margin-top: 5px; }
+  .glossario-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 0;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-top: none;
+    border-radius: 0 0 var(--radius) var(--radius);
+    overflow: hidden;
+  }
+  .gloss-item {
+    padding: 18px 20px;
+    border-right: 1px solid var(--gray-100);
+    border-bottom: 1px solid var(--gray-100);
+    font-size: 13.5px;
+    line-height: 1.6;
+  }
+  .gloss-item:hover { background: var(--gray-50); }
+  .gloss-term {
+    font-weight: 700;
+    color: var(--navy);
+    font-size: 14px;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .gloss-icon { font-size: 16px; }
+  .gloss-def { color: var(--gray-700); }
+
+  /* ──── MODELOS ──── */
+  .modelos-section { margin: 40px 0 0; }
+  .modelos-section > .sec-header {
+    background: linear-gradient(135deg, #1a2f5a 0%, #0d1b3e 100%);
+    color: var(--white);
+    padding: 24px 28px;
+    border-radius: var(--radius) var(--radius) 0 0;
+  }
+  .modelos-section > .sec-header h2 {
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .modelos-section > .sec-header p { font-size: 13.5px; color: rgba(255,255,255,.7); margin-top: 5px; }
+
+  .modelos-index {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-top: none;
+    padding: 24px 28px;
+  }
+  .modelos-index h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--gray-200);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .modelos-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+  .modelo-index-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 16px;
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    transition: all .15s;
+  }
+  .modelo-index-item:hover { background: var(--blue-light); border-color: #93c5fd; }
+  .modelo-badge {
+    font-size: 11px;
+    font-weight: 700;
+    font-family: var(--font-mono);
+    background: var(--navy);
+    color: var(--white);
+    padding: 3px 9px;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+  .modelo-index-title { font-weight: 600; font-size: 14px; color: var(--navy); }
+  .modelo-index-meta { font-size: 12px; color: var(--gray-600); margin-top: 1px; }
+  .modelo-index-tag {
+    margin-left: auto;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 20px;
+    background: var(--gray-200);
+    color: var(--gray-700);
+    white-space: nowrap;
+  }
+
+  /* ──── MODELO CARDS ──── */
+  .modelo-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    margin: 20px 0;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+  .modelo-card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: var(--navy);
+    color: var(--white);
+    padding: 18px 24px;
+  }
+  .modelo-card-header .m-num {
+    background: var(--gold);
+    color: var(--navy);
+    font-weight: 800;
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    flex-shrink: 0;
+    font-family: var(--font-mono);
+  }
+  .modelo-card-header h3 {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 3px;
+  }
+  .modelo-card-header .m-meta { font-size: 12px; color: rgba(255,255,255,.65); }
+
+  .modelo-form {
+    padding: 24px;
+    font-size: 13.5px;
+  }
+  .modelo-form h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 18px 0 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--gray-200);
+  }
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .form-field label {
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--gray-600);
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+  }
+  .form-field input, .form-field textarea, .form-field select {
+    border: 1px solid var(--gray-300);
+    border-radius: 6px;
+    padding: 8px 10px;
+    font-size: 13px;
+    font-family: var(--font-main);
+    color: var(--gray-700);
+    background: var(--gray-50);
+    transition: border-color .15s;
+  }
+  .form-field input:focus, .form-field textarea:focus {
+    outline: none;
+    border-color: var(--navy);
+    background: var(--white);
+  }
+  .form-field textarea { resize: vertical; min-height: 70px; }
+  .form-full { grid-column: 1 / -1; }
+
+  .assinatura-row {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+  .assinatura-box {
+    flex: 1;
+    min-width: 180px;
+    border-top: 2px solid var(--gray-300);
+    padding-top: 8px;
+    font-size: 12px;
+    color: var(--gray-600);
+    font-style: italic;
+  }
+
+  .checkbox-list { list-style: none; padding: 0; }
+  .checkbox-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 0;
+    border-bottom: 1px solid var(--gray-100);
+    font-size: 13.5px;
+    color: var(--gray-700);
+  }
+  .checkbox-list li input[type=checkbox] { width: 16px; height: 16px; flex-shrink: 0; accent-color: var(--navy); }
+
+  .confirmacao-table thead th { font-size: 12px; }
+  .confirmacao-table tbody td { font-size: 13px; }
+  .confirmacao-table .item-ref {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  /* ──── FOOTER ──── */
+  footer {
+    background: var(--navy);
+    color: rgba(255,255,255,.7);
+    padding: 28px 24px;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.7;
+    margin-top: 48px;
+  }
+  footer strong { color: var(--white); }
+  footer .disclaimer { font-size: 12px; color: rgba(255,255,255,.45); margin-top: 8px; }
+
+  /* ──── SHARE BAR ──── */
+  .share-bar {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 18px;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    margin: 28px 0 8px;
+    font-size: 13.5px;
+  }
+  .share-bar span { color: var(--gray-600); }
+  .share-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    font-family: var(--font-main);
+    transition: filter .15s;
+  }
+  .share-btn:hover { filter: brightness(.9); }
+  .btn-dl { background: var(--navy); color: var(--white); }
+  .btn-wa { background: #25d366; color: var(--white); }
+
+  @media (max-width: 640px) {
+    .steps-strip { flex-direction: column; }
+    .step-item { border-right: none; border-bottom: 1px solid var(--gray-200); }
+    .dossie-grid { grid-template-columns: 1fr; }
+    .glossario-grid { grid-template-columns: 1fr; }
+    .assinatura-row { flex-direction: column; }
+    .etapa-header { flex-direction: column; }
+    .item-body { padding-left: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <span>🏛️</span>
+  <span><strong>ANOREGRJ</strong> — Associação dos Notários e Registradores do Estado do Rio de Janeiro</span>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-logo">ANOREG <span class="rj">RJ</span></div>
+  <div class="header-sub">Associação dos Notários e Registradores do Estado do Rio de Janeiro</div>
+  <h1>🛡️ Guia Prático de Conformidade Digital</h1>
+  <div class="provimento-badge">Provimento CNJ nº 213/2026</div>
+  <p class="header-desc">
+    Comissão de Governança Digital e Conformidade Tecnológica — ANOREGRJ<br>
+    📋 Passo a passo para titulares de cartório — <strong>Etapas 1 e 2</strong> — Governança, Conformidade Legal, Infraestrutura e Continuidade Operacional
+  </p>
+</header>
+
+<!-- MAIN -->
+<div class="container">
+
+  <div class="alert alert-danger" style="margin-top:28px;">
+    <span class="alert-icon">🚨</span>
+    <div><strong>ATENÇÃO REDOBRADA:</strong> As etapas são <strong>SEQUENCIAIS e CUMULATIVAS</strong>. Você só pode declarar a conclusão da Etapa 2 depois de concluir 100% da Etapa 1. Não existe declaração simultânea, parcial ou adiantada. Cada etapa tem sua própria declaração no Sistema Justiça Aberta — e elas <strong>NÃO podem ser feitas ao mesmo tempo!</strong></div>
+  </div>
+
+  <div class="welcome-card">
+    👋 Olá, titular! O Provimento CNJ nº 213/2026 chegou para modernizar e proteger os cartórios brasileiros. Mas não se preocupe — este guia vai te mostrar, de forma simples e descomplicada, <strong>o que fazer</strong> e <strong>como fazer</strong> em cada passo das Etapas 1 e 2. Vamos juntos nessa jornada tecnológica! 🚀
+  </div>
+
+  <!-- STEPS STRIP -->
+  <div class="steps-strip">
+    <div class="step-item active">
+      <div class="step-num">1</div><br>Governança &amp;<br>Conformidade Legal
+    </div>
+    <div class="step-item active">
+      <div class="step-num">2</div><br>Infraestrutura &amp;<br>Continuidade
+    </div>
+    <div class="step-item">
+      <div class="step-num">3</div><br>Proteção do<br>Acervo Digital
+    </div>
+    <div class="step-item">
+      <div class="step-num">4</div><br>Monitoramento<br>&amp; Auditoria
+    </div>
+    <div class="step-item">
+      <div class="step-num">5</div><br>Interoperabilidade<br>&amp; Governança
+    </div>
+  </div>
+
+  <!-- PRAZOS -->
+  <div class="section-card">
+    <h3>⏰ Prazos para concluir as Etapas 1 e 2 <small style="font-weight:400;font-size:13px;color:var(--gray-600)">(contados da entrada em vigor)</small></h3>
+    <p class="sub-desc">Provimento vigente desde <strong>23/02/2026</strong> — Confira em que classe se enquadra!</p>
+    <table>
+      <thead><tr><th>Classe da Serventia</th><th>Receita Bruta Semestral</th><th>Prazo para Etapas 1 e 2</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Classe 3</strong></td><td>Acima de R$ 500.000,00</td><td><strong>90 dias ⚡</strong></td></tr>
+        <tr><td><strong>Classe 2</strong></td><td>Entre R$ 100.001 e R$ 500.000</td><td><strong>150 dias 🕐</strong></td></tr>
+        <tr><td><strong>Classe 1</strong></td><td>Até R$ 100.000,00</td><td><strong>210 dias 🕑</strong></td></tr>
+      </tbody>
+    </table>
+    <div class="alert alert-info" style="margin-top:16px;margin-bottom:0;">
+      <span class="alert-icon">💡</span>
+      <div>Precisa de mais tempo? Em casos excepcionais, a Corregedoria pode prorrogar o prazo por até 90 dias, desde que você apresente um plano formal de adequação e adote medidas mínimas de redução de risco imediatamente. Peça antes do prazo vencer!</div>
+    </div>
+  </div>
+
+  <!-- ════════ ETAPA 1 ════════ -->
+  <div class="etapa-header" id="etapa1">
+    <div class="etapa-num">1</div>
+    <div>
+      <h2>ETAPA 1 — GOVERNANÇA, ESTRUTURAÇÃO ORGANIZACIONAL E CONFORMIDADE LEGAL</h2>
+      <p>📌 A base de tudo! Sem essa etapa 100% concluída, você não pode nem pensar na Etapa 2.</p>
+      <div class="etapa-prazos">
+        <span class="prazo-badge">⚡ Cl.3: 90 dias</span>
+        <span class="prazo-badge">🕐 Cl.2: 150 dias</span>
+        <span class="prazo-badge">🕑 Cl.1: 210 dias</span>
+      </div>
+    </div>
+  </div>
+  <div class="etapa-body">
+    <div class="objetivo-box">
+      🎯 <strong>Objetivo da Etapa 1:</strong> Instituir a base normativa, organizacional e documental do cartório. Ao final, você deve ter: governança formal, responsabilidades definidas, política interna aprovada, controles mínimos de acesso implementados, inventário de ativos concluído e documentação pronta para uma eventual fiscalização.
+    </div>
+
+    <!-- Item 1.1 -->
+    <div class="item-row open" onclick="toggleItem(this)">
+      <div class="item-header">
+        <div class="item-num">1.1</div>
+        <div class="item-title"><span class="item-icon">👤</span>O QUE FAZER: Designar formalmente os responsáveis</div>
+        <div class="item-toggle">▼</div>
+      </div>
+      <div class="item-body">
+        <h4>🔧 Como Fazer</h4>
+        <p>Emita um documento escrito (portaria, ato interno, carta de designação) assinado por você, titular, nomeando:</p>
+        <ul>
+          <li><span>📌</span> <span><strong>Responsável técnico interno</strong> — a pessoa do cartório que vai cuidar da implementação tecnológica (pode ser um colaborador de confiança ou o próprio titular).</span></li>
+          <li><span>🔐</span> <span><strong>Você mesmo como Controlador de Dados Pessoais</strong> — isso é obrigatório pela LGPD. O titular da delegação é sempre o responsável pelos dados dos clientes.</span></li>
+          <li><span>🧑‍💼</span> <span><strong>Encarregado/DPO</strong> (quando aplicável) — é a pessoa que vai responder perguntas de clientes sobre seus dados. Consulte se sua serventia precisa de um DPO.</span></li>
+        </ul>
+        <div class="tip">💾 Guarde esses documentos! Eles integram o dossiê técnico da Etapa 1.</div>
+      </div>
+    </div>
+
+    <!-- Item 1.2 -->
+    <div class="item-row" onclick="toggleItem(this)">
+      <div class="item-header">
+        <div class="item-num">1.2</div>
+        <div class="item-title"><span class="item-icon">📄</span>O QUE FAZER: Criar a Política de Segurança da Informação</div>
+        <div class="item-toggle">▼</div>
+      </div>
+      <div class="item-body">
+        <h4>🔧 Como Fazer</h4>
+        <p>Redija (ou contrate quem redija) um documento chamado <strong>Política de Segurança da Informação</strong> contendo obrigatoriamente:</p>
+        <ul>
+          <li><span>✅</span><span>Objetivos e princípios (confidencialidade, integridade, disponibilidade, rastreabilidade).</span></li>
+          <li><span>✅</span><span>Quem é responsável por quê no cartório.</span></li>
+          <li><span>✅</span><span>Regras de acesso a sistemas (quem pode entrar, quem não pode, como revogar acesso).</span></li>
+          <li><span>✅</span><span>Diretrizes sobre o que pode e não pode ser feito com os equipamentos.</span></li>
+          <li><span>✅</span><span>Como tratar incidentes (alguém invadiu o sistema? O que fazer?).</span></li>
+          <li><span>✅</span><span>Como proteger dados pessoais (LGPD).</span></li>
+          <li><span>✅</span><span>Regras de criptografia e de backup.</span></li>
+          <li><span>✅</span><span><strong>Diretrizes iniciais de continuidade</strong> — atenção: o PCN e o PRD completos serão elaborados na Etapa 2. Aqui você apenas inclui os objetivos e o escopo preliminar na Política.</span></li>
+        </ul>
+        <div class="tip">Depois de escrita: aprove formalmente e compartilhe internamente com todos os colaboradores, estagiários e terceiros. Colha assinaturas de ciência!</div>
+      </div>
+    </div>
+
+    <!-- Item 1.3 -->
+    <div class="item-row" onclick="toggleItem(this)">
+      <div class="item-header">
+        <div class="item-num">1.3</div>
+        <div class="item-title"><span class="item-icon">🔑</span>O QUE FAZER: Implementar autenticação segura e multifator</div>
+        <div class="item-toggle">▼</div>
+      </div>
+      <div class="item-body">
+        <h4>🔧 Como Fazer</h4>
+        <ul>
+          <li><span>🚫</span><span><strong>Proibido agora:</strong> Login e senha compartilhados (ex.: todos usando "cartorio123"). Cada colaborador tem que ter seu próprio usuário!</span></li>
+          <li><span>🔐</span><span><strong>Ative o MFA (Autenticação Multifator)</strong> em todos os acessos administrativos e a sistemas críticos. MFA é aquele código extra que chega no celular ou no aplicativo além da senha. Fale com seu fornecedor de sistema para ativar.</span></li>
+          <li><span>✅</span><span>Crie um registro de quem tem acesso a quê (lista de usuários e perfis). Guarde esse documento!</span></li>
+          <li><span>🗑️</span><span>Revogue imediatamente acessos de pessoas que já saíram do cartório.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Item 1.4 -->
+    <div class="item-row" onclick="toggleItem(this)">
+      <div class="item-header">
+        <div class="item-num">1.4</div>
+        <div class="item-title"><span class="item-icon">📊</span>O QUE FAZER: Criar o Registro de Operações de Dados Pessoais</div>
+        <div class="item-toggle">▼</div>
+      </div>
+      <div class="item-body">
+        <h4>🔧 Como Fazer</h4>
+        <p>Faça uma lista (pode ser em planilha ou documento) registrando todas as operações com dados pessoais que o cartório realiza. Por exemplo:</p>
+        <ul>
+          <li><span>📁</span><span>Que tipos de dados pessoais são coletados (nome, CPF, endereço, etc.).</span></li>
+          <li><span>🎯</span><span>Para que finalidade cada dado é coletado.</span></li>
+          <li><span>🕐</span><span>Por quanto tempo cada dado é guardado.</span></li>
+          <li><span>🤝</span><span>Quem tem acesso a esses dados (funcionários, sistemas, fornecedores).</span></li>
+        </ul>
+        <div class="tip">Este registro é exigência da LGPD (Lei Geral de Proteção de Dados) e é parte do dossiê técnico.</div>
+      </div>
+    </div>
+
+    <!-- Item 1.5 / 1.6 -->
+    <div class="item-row" onclick="toggleItem(this)">
+      <div class="item-header">
+        <div class="item-num">1.5/1.6</div>
+        <div class="item-title"><span class="item-icon">🚨</span>O QUE FAZER: Estabelecer procedimento de comunicação de incidentes críticos</div>
+        <div class="item-toggle">▼</div>
+      </div>
+      <div class="item-body">
+        <h4>🔧 Como Fazer</h4>
+        <p>Crie um procedimento escrito (pode ser simples) determinando que:</p>
+        <ul>
+          <li><span>⚠️</span><span>Se ocorrer um incidente crítico (sistema fora do ar, invasão, perda de dados), o titular será comunicado imediatamente.</span></li>
+          <li><span>📞</span><span>A Corregedoria competente deve ser comunicada em até <strong>72 horas</strong> em incidentes críticos (e o ideal é avisar em até 24h sempre que possível).</span></li>
+          <li><span>📝</span><span>Todo incidente deve ser registrado formalmente por escrito.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Item 1.7 -->
+    <div class="item-row" onclick="toggleItem(this)">
+      <div class="item-header">
+        <div class="item-num">1.7</div>
+        <div class="item-title"><span class="item-icon">🗂️</span>O QUE FAZER: Elaborar inventário completo de ativos tecnológicos</div>
+        <div class="item-toggle">▼</div>
+      </div>
+      <div class="item-body">
+        <h4>🔧 Como Fazer</h4>
+        <p>Liste TUDO que o cartório tem de tecnologia. Faça isso numa planilha ou documento:</p>
+        <ul>
+          <li><span>💻</span><span>Computadores, notebooks, impressoras, scanners, servidores, roteadores, switches.</span></li>
+          <li><span>💾</span><span>Softwares utilizados (com versão e validade da licença).</span></li>
+          <li><span>🔗</span><span>Integrações com sistemas externos (ex.: ONR, e-Notariado, sistemas do tribunal).</span></li>
+          <li><span>🗄️</span><span>Bancos de dados utilizados.</span></li>
+          <li><span>🔏</span><span>Certificados digitais (com data de vencimento!).</span></li>
+          <li><span>📑</span><span>Contratos com fornecedores de tecnologia.</span></li>
+          <li><span>📋</span><span>Histórico de atualizações de sistemas.</span></li>
+        </ul>
+        <div class="tip">💡 Dica: coloque datas de revisão e responsável por cada item. Isso facilita muito na hora da fiscalização!</div>
+      </div>
+    </div>
+
+    <!-- Item 1.8 -->
+    <div class="item-row" onclick="toggleItem(this)">
+      <div class="item-header">
+        <div class="item-num">1.8</div>
+        <div class="item-title"><span class="item-icon">📑</span>O QUE FAZER: Regularizar licenças e revisar contratos com fornecedores</div>
+        <div class="item-toggle">▼</div>
+      </div>
+      <div class="item-body">
+        <h4>🔧 Como Fazer</h4>
+        <ul>
+          <li><span>✅</span><span>Verifique se TODOS os softwares usados têm licença válida para uso comercial. Software pirata ou expirado é proibido!</span></li>
+          <li><span>📝</span><span>Revise todos os contratos com empresas que mexem com os dados do cartório. Esses contratos precisam ter obrigatoriamente cláusulas de: 🔒 Confidencialidade · ↩️ Reversibilidade · 📦 Portabilidade · 🚨 Gestão de incidentes · 🛡️ Conformidade com a LGPD.</span></li>
+          <li><span>⚠️</span><span>Contratos que não têm essas cláusulas precisam ser aditados ou renegociados.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- OBRIGAÇÃO JA ETAPA 1 -->
+    <div class="decl-box">
+      <div class="decl-header">⚖️ 🚀 OBRIGAÇÃO NO SISTEMA JUSTIÇA ABERTA — ETAPA 1</div>
+      <div class="decl-body">
+        Ao concluir <strong>INTEGRALMENTE</strong> todos os itens acima (1.1 a 1.8), você deverá acessar o <strong>Sistema Justiça Aberta</strong> e registrar a declaração de conclusão da Etapa 1, <strong>assinada pessoalmente por você</strong> (titular, interino ou interventor).<br><br>
+        ⛔ <strong>ATENÇÃO CRÍTICA:</strong> Você só pode declarar a Etapa 1 como concluída depois que TODOS os itens estiverem cumpridos. <strong>Declaração falsa sujeita às penalidades da lei!</strong> E só após essa declaração estar feita é que você poderá iniciar formalmente a Etapa 2.
+      </div>
+    </div>
+  </div>
+
+  <!-- PASSO FINAL ETAPA 1 -->
+  <div class="passo-final">
+    <h3>✅ PASSO FINAL DA ETAPA 1 — Declaração de Conclusão</h3>
+    <p>Produza a <strong>declaração de conclusão da Etapa 1</strong>, necessariamente assinada por você (titular, interino ou interventor). Em seguida, <strong>acesse o Sistema Justiça Aberta</strong> e registre a conclusão. <em>Lembre-se: a conclusão de cada requisito deve ser informada um a um ao sistema à medida que forem sendo cumpridos.</em> Somente após o cumprimento integral de todos os itens e o registro no sistema você está autorizado a iniciar a <strong>Etapa 2</strong>.</p>
+  </div>
+
+  <!-- ════════ ETAPA 2 ════════ -->
+  <div class="etapa-header" id="etapa2">
+    <div class="etapa-num">2</div>
+    <div>
+      <h2>ETAPA 2 — INFRAESTRUTURA E CONTINUIDADE OPERACIONAL</h2>
+      <p>🏗️ Hora de colocar a casa em ordem fisicamente! Energia, internet, servidores e planos de emergência.</p>
+      <div class="etapa-prazos">
+        <span class="prazo-badge">⚡ Cl.3: 90 dias</span>
+        <span class="prazo-badge">🕐 Cl.2: 150 dias</span>
+        <span class="prazo-badge">🕑 Cl.1: 210 dias</span>
+      </div>
+    </div>
+  </div>
+  <div class="etapa-body">
+    <div class="objetivo-box">
+      🎯 <strong>Objetivo da Etapa 2:</strong> Estruturar a base material que sustenta os sistemas. Ao final, você deve ter: infraestrutura física adequada, internet compatível com o porte do cartório, Plano de Continuidade de Negócios (PCN) e Plano de Recuperação de Desastres (PRD) formalizados com RTO e RPO definidos, e proteção básica de endpoint implementada.
+    </div>
+    <div class="alert alert-warning" style="margin:16px;border-radius:8px;">
+      <span class="alert-icon">🔒</span>
+      <div><strong>Só inicie a Etapa 2 após declarar formalmente a conclusão da Etapa 1 no Sistema Justiça Aberta!</strong> Etapas não podem ser cumpridas concomitantemente para fins de declaração. A implementação técnica antecipada de itens mais avançados é permitida, mas a <em>certificação formal</em> deve seguir a ordem.</div>
+    </div>
+
+    <!-- Item 2.1 -->
+    <div class="item-row" onclick="toggleItem(this)">
+      <div class="item-header">
+        <div class="item-num">2.1</div>
+        <div class="item-title"><span class="item-icon">⚡</span>O QUE FAZER: Implementar infraestrutura elétrica adequada</div>
+        <div class="item-toggle">▼</div>
+      </div>
+      <div class="item-body">
+        <h4>🔧 Como Fazer</h4>
+        <ul>
+          <li><span>🔌</span><span>Verifique se a instalação elétrica é estável. Se houver oscilações frequentes, contrate um eletricista habilitado.</span></li>
+          <li><span>⚙️</span><span><strong>Instale o SAI/UPS (nobreak)</strong> em todos os equipamentos críticos (servidores, computadores principais). O nobreak precisa ter autonomia mínima de 30 minutos para salvar os dados e desligar o sistema com segurança.</span></li>
+          <li><span>🌎</span><span><strong>Aterramento técnico:</strong> Contrate um profissional habilitado para verificar o aterramento elétrico e emitir o laudo com ART (Anotação de Responsabilidade Técnica). Guarde esse laudo — ele vai no dossiê!</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Item 2.2 -->
+    <div class="item-row" onclick="toggleItem(this)">
+      <div class="item-header">
+        <div class="item-num">2.2</div>
+        <div class="item-title"><span class="item-icon">🔋</span>O QUE FAZER: Formalizar plano de contingência energética</div>
+        <div class="item-toggle">▼</div>
+      </div>
+      <div class="item-body">
+        <h4>🔧 Como Fazer</h4>
+        <p>Elabore um documento simples respondendo: <em>"E se a energia cair?"</em></p>
+        <ul>
+          <li><span>💡</span><span>O nobreak suporta por quanto tempo?</span></li>
+          <li><span>📋</span><span>Quais procedimentos serão adotados durante o tempo sem energia?</span></li>
+          <li><span>📞</span><span>Quem acionar? (fornecedor de energia, técnico de TI).</span></li>
+          <li><span>📁</span><span>Como os serviços essenciais continuarão sendo prestados?</span></li>
+        </ul>
+        <div class="tip">Cartórios maiores (Classe 2 e 3) devem ter soluções mais robustas (gerador, links de internet redundantes, etc.).</div>
+      </div>
+    </div>
+
+    <!-- Item 2.3 -->
+    <div class="item-row" onclick="toggleItem(this)">
+      <div class="item-header">
+        <div class="item-num">2.3</div>
+        <div class="item-title"><span class="item-icon">🏢</span>O QUE FAZER: Adequar o ambiente físico dos equipamentos</div>
+        <div class="item-toggle">▼</div>
+      </div>
+      <div class="item-body">
+        <h4>🔧 Como Fazer</h4>
+        <ul>
+          <li><span>🚪</span><span>O servidor (ou computador principal) deve ficar em local com <strong>acesso restrito</strong> — não pode qualquer pessoa entrar e mexer. Uma sala trancada já resolve em muitos casos.</span></li>
+          <li><span>🔥</span><span>Verifique se há risco de incêndio, inundação ou variação extrema de temperatura no local dos equipamentos. Se necessário, instale extintor e evite locais úmidos ou quentes.</span></li>
+          <li><span>📦</span><span>Organize os cabos e equipamentos de forma adequada (sem acúmulo de calor, sem cabos soltos no chão).</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Item 2.4 -->
+    <div class="item-row" onclick="toggleItem(this)">
+      <div class="item-header">
+        <div class="item-num">2.4</div>
+        <div class="item-title"><span class="item-icon">🌐</span>O QUE FAZER: Implementar conectividade compatível com a classe</div>
+        <div class="item-toggle">▼</div>
+      </div>
+      <div class="item-body">
+        <h4>🔧 Como Fazer</h4>
+        <p>Verifique a velocidade mínima de internet necessária para sua classe:</p>
+        <ul>
+          <li><span>🟦</span><span><strong>Classe 1:</strong> mínimo 2 Mbps (velocidade de referência).</span></li>
+          <li><span>🟦</span><span><strong>Classe 2:</strong> mínimo 10 Mbps.</span></li>
+          <li><span>🟦</span><span><strong>Classe 3:</strong> mínimo 50 Mbps.</span></li>
+        </ul>
+        <p>O mais importante é que a internet funcione bem o suficiente para os backups e sistemas. Documente testes de velocidade!</p>
+        <p>Instale um <strong>roteador</strong> para gerenciar as conexões e um <strong>switch</strong> para conectar os dispositivos internos. Cartórios maiores devem considerar links redundantes (dois provedores de internet diferentes).</p>
+      </div>
+    </div>
+
+    <!-- Item 2.5 -->
+    <div class="item-row" onclick="toggleItem(this)">
+      <div class="item-header">
+        <div class="item-num">2.5</div>
+        <div class="item-title"><span class="item-icon">📋</span>O QUE FAZER: Formalizar o PCN e o PRD</div>
+        <div class="item-toggle">▼</div>
+      </div>
+      <div class="item-body">
+        <h4>🔧 Como Fazer</h4>
+        <p>Este é o passo mais importante da Etapa 2! Elabore dois documentos formais (podem ser integrados em um só):</p>
+        <p><strong>📗 PCN — Plano de Continuidade de Negócios:</strong> Responde "como o cartório continua funcionando se algo der errado?"</p>
+        <p><strong>📕 PRD — Plano de Recuperação de Desastres:</strong> Responde "como recuperamos tudo após um desastre?"</p>
+        <p>Esses documentos precisam ter <strong>obrigatoriamente</strong>:</p>
+        <ul>
+          <li><span>🔍</span><span><strong>Identificação e avaliação de riscos</strong> — o que pode dar errado? (incêndio, invasão, queda de internet, falha de servidor).</span></li>
+          <li><span>🛡️</span><span><strong>Medidas de mitigação</strong> — o que fazer para cada risco.</span></li>
+          <li><span>⏱️</span><span><strong>RTO definido</strong> — em quanto tempo o cartório deve estar funcionando de novo? (Ex.: Classe 1 e 2: até 24h; Classe 3: até 8h).</span></li>
+          <li><span>💾</span><span><strong>RPO definido</strong> — qual o máximo de dados que posso perder? (Ex.: Classe 1: até 24h; Classe 2: até 12h; Classe 3: até 4h).</span></li>
+          <li><span>📅</span><span><strong>Ações de curto prazo</strong> (até 30 dias) e <strong>médio prazo</strong> (até 90 dias) para resposta a incidentes.</span></li>
+        </ul>
+        <div class="tip">⚠️ Atenção: sem RTO e RPO definidos, o documento não está completo e a etapa não pode ser declarada concluída!</div>
+      </div>
+    </div>
+
+    <!-- Item 2.6 -->
+    <div class="item-row" onclick="toggleItem(this)">
+      <div class="item-header">
+        <div class="item-num">2.6</div>
+        <div class="item-title"><span class="item-icon">🖥️</span>O QUE FAZER: Garantir equipamentos adequados e suporte técnico</div>
+        <div class="item-toggle">▼</div>
+      </div>
+      <div class="item-body">
+        <h4>🔧 Como Fazer</h4>
+        <ul>
+          <li><span>💻</span><span>Verifique se os computadores, impressoras e scanners estão funcionando e são adequados para os sistemas utilizados.</span></li>
+          <li><span>🔧</span><span>Garanta que há <strong>suporte técnico disponível</strong> — seja um funcionário interno de TI ou uma empresa contratada. O suporte deve ser contínuo (não pode ficar dias sem atendimento).</span></li>
+          <li><span>📝</span><span>Documente os contratos de suporte técnico (entram no inventário de ativos da Etapa 1).</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Item 2.7 -->
+    <div class="item-row" onclick="toggleItem(this)">
+      <div class="item-header">
+        <div class="item-num">2.7</div>
+        <div class="item-title"><span class="item-icon">🛡️</span>O QUE FAZER: Implementar proteção básica de endpoint (antivírus)</div>
+        <div class="item-toggle">▼</div>
+      </div>
+      <div class="item-body">
+        <h4>🔧 Como Fazer</h4>
+        <ul>
+          <li><span>🦠</span><span>Instale <strong>antivírus/antimalware em todos os computadores e servidores</strong> utilizados pelo cartório.</span></li>
+          <li><span>🔄</span><span>Configure a atualização automática do antivírus.</span></li>
+          <li><span>📝</span><span>Registre qual solução foi instalada, em quais equipamentos e a data de instalação. Isso vai no dossiê técnico!</span></li>
+          <li><span>⚠️</span><span>Sistemas operacionais sem suporte do fabricante (EOL — End of Life) são proibidos. Se ainda usa Windows 7 ou outros desatualizados, é hora de migrar!</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Item 2.8 -->
+    <div class="item-row" onclick="toggleItem(this)">
+      <div class="item-header">
+        <div class="item-num">2.8</div>
+        <div class="item-title"><span class="item-icon">🗺️</span>O QUE FAZER: Formalizar documento da arquitetura tecnológica</div>
+        <div class="item-toggle">▼</div>
+      </div>
+      <div class="item-body">
+        <h4>🔧 Como Fazer</h4>
+        <p>Elabore um documento técnico simplificado (um diagrama ou texto descritivo) mostrando:</p>
+        <ul>
+          <li><span>🌐</span><span><strong>Topologia básica da rede</strong> — como os computadores estão conectados entre si e à internet.</span></li>
+          <li><span>☁️</span><span><strong>Ambientes utilizados</strong> — os dados ficam no servidor local? Na nuvem? Em sistema da empresa (SaaS)? Ou híbrido?</span></li>
+          <li><span>🔄</span><span><strong>Fluxos de dados críticos</strong> — como os dados dos atos notariais trafegam pelos sistemas.</span></li>
+          <li><span>💾</span><span><strong>Localização dos backups</strong> — onde estão guardados (HD externo, nuvem, servidor remoto?).</span></li>
+          <li><span>🔗</span><span><strong>Integrações externas relevantes</strong> — sistemas do tribunal, e-Notariado, ONR, etc.</span></li>
+          <li><span>🔁</span><span><strong>Mecanismos de redundância</strong> — o que garante que o sistema continue funcionando se algo quebrar?</span></li>
+        </ul>
+        <div class="tip">Não precisa ser um desenho técnico profissional — o importante é que seja claro e verificável pela Corregedoria.</div>
+      </div>
+    </div>
+
+    <!-- OBRIGAÇÃO JA ETAPA 2 -->
+    <div class="decl-box">
+      <div class="decl-header">⚖️ 🚀 OBRIGAÇÃO NO SISTEMA JUSTIÇA ABERTA — ETAPA 2</div>
+      <div class="decl-body">
+        Ao concluir <strong>INTEGRALMENTE</strong> todos os itens acima (2.1 a 2.8), você deverá acessar o <strong>Sistema Justiça Aberta</strong> e registrar a declaração de conclusão da Etapa 2, <strong>assinada pessoalmente por você</strong> (titular, interino ou interventor).<br><br>
+        📌 <strong>Lembrete crucial:</strong> Cada requisito cumprido deve ser informado ao sistema individualmente, um a um. <strong>A declaração da Etapa 2 não pode ser feita ao mesmo tempo (concomitantemente) com a declaração da Etapa 1</strong> — a sequência é obrigatória. Declaração falsa sujeita às penalidades da lei!
+      </div>
+    </div>
+  </div>
+
+  <!-- PASSO FINAL ETAPA 2 -->
+  <div class="passo-final" style="background: linear-gradient(135deg, #1e4d7b 0%, #0d1b3e 100%);">
+    <h3>✅ PASSO FINAL DA ETAPA 2 — Declaração de Conclusão</h3>
+    <p>Produza a <strong>declaração de conclusão da Etapa 2</strong>, necessariamente assinada por você (titular, interino ou interventor). Em seguida, <strong>acesse o Sistema Justiça Aberta</strong> e registre a conclusão. Somente após isso você estará apto a iniciar formalmente a <strong>Etapa 3</strong>. Parabéns — você chegou à metade do caminho! 🎉</p>
+  </div>
+
+  <!-- DOSSIE -->
+  <div class="dossie-card">
+    <h3>📁 O DOSSIÊ TÉCNICO — Sua armadura na fiscalização!</h3>
+    <p class="sub">Guarde tudo! A Corregedoria pode pedir as evidências a qualquer momento.</p>
+    <p style="font-size:14px;color:rgba(255,255,255,.8);margin-bottom:16px;">O dossiê técnico é o conjunto de documentos que prova que você fez tudo certinho. Para as Etapas 1 e 2, guarde por no mínimo 5 anos:</p>
+    <div class="dossie-grid">
+      <div class="dossie-item"><span>📝</span>Atos de designação de responsáveis.</div>
+      <div class="dossie-item"><span>📄</span>Política de Segurança da Informação aprovada + lista de ciência dos colaboradores.</div>
+      <div class="dossie-item"><span>📊</span>Inventário de ativos tecnológicos.</div>
+      <div class="dossie-item"><span>📑</span>Contratos de fornecedores (com as cláusulas exigidas).</div>
+      <div class="dossie-item"><span>⚡</span>Laudo de aterramento elétrico com ART.</div>
+      <div class="dossie-item"><span>📋</span>PCN e PRD com RTO e RPO definidos.</div>
+      <div class="dossie-item"><span>💻</span>Comprovantes de licenças de software.</div>
+      <div class="dossie-item"><span>🛡️</span>Registro de instalação de antivírus/endpoint.</div>
+      <div class="dossie-item"><span>🌐</span>Documento da arquitetura tecnológica.</div>
+      <div class="dossie-item"><span>✅</span>Declarações de conclusão de cada etapa registradas no Justiça Aberta.</div>
+    </div>
+    <div class="dossie-classes">
+      <div class="dossie-class"><strong>Classe 1:</strong> Pode usar relatório simplificado + contratos e notas fiscais de TI. Não precisa de dossiê técnico completo!</div>
+      <div class="dossie-class"><strong>Classes 2 e 3:</strong> Dossiê completo com verificação de integridade (hash dos arquivos assinado digitalmente).</div>
+    </div>
+  </div>
+
+  <!-- GLOSSÁRIO -->
+  <div class="glossario-header">
+    <h2>📖 Glossário Tech Descomplicado</h2>
+    <p>Todos os termos tecnológicos do Provimento 213/2026 explicados em linguagem humana 😄</p>
+  </div>
+  <div class="glossario-grid">
+    <div class="gloss-item"><div class="gloss-term"><span class="gloss-icon">⚡</span>Alta Disponibilidade (HA)</div><div class="gloss-def">É quando o sistema é montado para quase nunca cair. Se um componente quebrar, outro assume automaticamente — como ter dois pneus sobressalentes! 🚗</div></div>
+    <div class="gloss-item"><div class="gloss-term"><span class="gloss-icon">🤝</span>Arquitetura Compartilhada</div><div class="gloss-def">Quando dois ou mais cartórios dividem a mesma infraestrutura de tecnologia — como dividir um servidor com o vizinho. Cada um tem sua "caixinha" separada, mas a máquina é a mesma.</div></div>
+    <div class="gloss-item"><div class="gloss-term"><span class="gloss-icon">💾</span>Backup (Cópia de Segurança)</div><div class="gloss-def">Cópia dos dados guardada em outro lugar. Se o servidor explodir, você recupera tudo do backup. É como guardar uma cópia da chave da casa na casa da sua mãe! 🔑</div></div>
+    <div class="gloss-item"><div class="gloss-term"><span class="gloss-icon">🔒</span>Criptografia</div><div class="gloss-def">Técnica que embaralha os dados de forma que só quem tem a "chave certa" consegue ler. É como um cofre digital — por fora parece texto sem sentido, mas com a chave tudo fica legível. 🗝️</div></div>
+    <div class="gloss-item"><div class="gloss-term"><span class="gloss-icon">🚨</span>Dados Críticos</div><div class="gloss-def">Informações que, se perdidas ou vazadas, causam grande problema jurídico ou legal: livros eletrônicos, atos registrais, backups, trilhas de auditoria. São os dados VIPs do cartório! 👑</div></div>
+    <div class="gloss-item"><div class="gloss-term"><span class="gloss-icon">📂</span>Dossiê Técnico</div><div class="gloss-def">Pasta com todos os documentos e evidências que provam que o cartório está em dia com as normas. É o "passaporte" do cartório na hora da fiscalização. 🛂</div></div>
+    <div class="gloss-item"><div class="gloss-term"><span class="gloss-icon">💥</span>EOL — End of Life</div><div class="gloss-def">Quando um software "morreu" para o fabricante — ele não recebe mais atualizações de segurança. Usar software EOL é como andar de carro sem airbag em rodovia! Proibido pelo Provimento. ⚠️</div></div>
+    <div class="gloss-item"><div class="gloss-term"><span class="gloss-icon">🔄</span>Failover</div><div class="gloss-def">Quando o sistema detecta uma falha e automaticamente passa o trabalho para um sistema reserva — sem interromper o serviço. É como o copiloto assumir o avião automaticamente! ✈️</div></div>
+    <div class="gloss-item"><div class="gloss-term"><span class="gloss-icon">🧱</span>Firewall</div><div class="gloss-def">O "porteiro digital" do cartório. Controla o que entra e sai da rede, bloqueando acessos não autorizados. Sem firewall, qualquer hacker pode entrar pela porta da frente. 🚪</div></div>
+    <div class="gloss-item"><div class="gloss-term"><span class="gloss-icon">#️⃣</span>Hash</div><div class="gloss-def">Uma "impressão digital" eletrônica de um arquivo. Se qualquer byte mudar, o hash muda completamente — provando que o documento foi alterado. É a assinatura dos documentos digitais! 🔏</div></div>
+    <div class="gloss-item"><div class="gloss-term"><span class="gloss-icon">☁️</span>IaaS — Infrastructure as a Service</div><div class="gloss-def">Você aluga servidores, redes e armazenamento na nuvem em vez de comprar os físicos. É como alugar um galpão em vez de construir um. 🏭</div></div>
+    <div class="gloss-item"><div class="gloss-term"><span class="gloss-icon">🕵️</span>IDS / IPS</div><div class="gloss-def">IDS é o "detetive de rede" — detecta tentativas de invasão. IPS vai além: também bloqueia o ataque na hora. Juntos, são a segurança armada do seu sistema! 🔫</div></div>
+    <div class="gloss-item"><div class="gloss-term"><span class="gloss-icon">🔐</span>MFA / AMF — Autenticação Multifator</div><div class="gloss-def">Além da senha, você precisa de um segundo fator para acessar o sistema — geralmente um código no celular. Mesmo que roubem sua senha, não entram sem o celular. É a trava extra da porta! 📱</div></div>
+    <div class="gloss-item"><div class="gloss-term"><span class="gloss-icon">🔗</span>Interoperabilidade</div><div class="gloss-def">Capacidade de sistemas diferentes "conversarem" entre si. Como um tradutor universal que garante que o sistema do cartório entenda o sistema do tribunal e vice-versa. 🤝</div></div>
+    <div class="gloss-item"><div class="gloss-term"><span class="gloss-icon">🚨</span>Incidente Crítico</div><div class="gloss-def">Um problema sério de segurança que pode comprometer os dados ou o funcionamento do cartório — invasão, ransomware, perda de dados. Requer comunicação à Corregedoria em até 72h! ⏰</div></div>
+    <div class="gloss-item"><div class="gloss-term"><span class="gloss-icon">📋</span>PCN — Plano de Continuidade de Negócios</div><div class="gloss-def">O "manual de sobrevivência" do cartório: o que fazer para continuar atendendo quando algo dá errado. Responde: "Como mantemos o serviço funcionando durante uma crise?" 🛟</div></div>
+    <div class="gloss-item"><div class="gloss-term"><span class="gloss-icon">🔧</span>PaaS — Platform as a Service</div><div class="gloss-def">Você usa uma plataforma pronta na nuvem para desenvolver e rodar seus sistemas, sem se preocupar com servidores. É como usar a cozinha de um restaurante sem precisar construir uma. 👨‍🍳</div></div>
+    <div class="gloss-item"><div class="gloss-term"><span class="gloss-icon">📦</span>Portabilidade de Dados</div><div class="gloss-def">Seu direito de pegar todos os dados do cartório e levar para outro fornecedor quando quiser, em formato que qualquer sistema consiga ler. Ninguém pode te prender num único fornecedor! 🏃</div></div>
+    <div class="gloss-item"><div class="gloss-term"><span class="gloss-icon">🔥</span>PRD — Plano de Recuperação de Desastres</div><div class="gloss-def">O "manual de ressurreição" do cartório: como restaurar tudo após um desastre grave (incêndio, inundação, ataque hacker). Trabalha em conjunto com o PCN. 🦅</div></div>
+    <div class="gloss-item"><div class="gloss-term"><span class="gloss-icon">⏰</span>RPO — Recovery Point Objective</div><div class="gloss-def">O máximo de dados que você aceita perder em caso de desastre. Se o RPO é de 4 horas (Classe 3), significa que os backups devem garantir que você perca no máximo 4 horas de trabalho. 📉</div></div>
+    <div class="gloss-item"><div class="gloss-term"><span class="gloss-icon">🏎️</span>RTO — Recovery Time Objective</div><div class="gloss-def">O tempo máximo que o cartório pode ficar fora do ar após um problema. Para Classes 1 e 2 é até 24h; para Classe 3 é até 8h. Depois disso, o serviço precisa estar de volta! ⏱️</div></div>
+    <div class="gloss-item"><div class="gloss-term"><span class="gloss-icon">↩️</span>Reversibilidade</div><div class="gloss-def">Garantia de que, se você trocar de fornecedor de software, receberá de volta TODOS os seus dados de forma organizada e utilizável. O fornecedor não pode "sequestrar" seus dados! 🗝️</div></div>
+    <div class="gloss-item"><div class="gloss-term"><span class="gloss-icon">☁️</span>SaaS — Software as a Service</div><div class="gloss-def">Você usa o software pela internet, sem instalar nada no computador — o fornecedor cuida de tudo. Como o e-mail do Gmail: você usa sem precisar gerenciar o servidor. 💌</div></div>
+    <div class="gloss-item"><div class="gloss-term"><span class="gloss-icon">📊</span>SGBD</div><div class="gloss-def">Sistema Gerenciador de Banco de Dados — o "arquivo central" que organiza e protege todos os dados dos atos do cartório. É o coração do sistema! ❤️</div></div>
+    <div class="gloss-item"><div class="gloss-term"><span class="gloss-icon">📡</span>SIEM</div><div class="gloss-def">Sistema que coleta e analisa registros de eventos de segurança em painel centralizado. É como a central de monitoramento de um condomínio — tudo num lugar só! 📺</div></div>
+    <div class="gloss-item"><div class="gloss-term"><span class="gloss-icon">🔀</span>Switch (Comutador)</div><div class="gloss-def">Equipamento de rede que conecta vários computadores entre si dentro do cartório. É como a mesa de distribuição telefônica — conecta todo mundo! 🔌</div></div>
+    <div class="gloss-item"><div class="gloss-term"><span class="gloss-icon">🛡️</span>TLS — Transport Layer Security</div><div class="gloss-def">Protocolo de segurança que criptografa os dados enquanto eles viajam pela internet. O cadeado nos sites (https) usa TLS. O Provimento exige TLS 1.2 ou superior. 🔒</div></div>
+    <div class="gloss-item"><div class="gloss-term"><span class="gloss-icon">📝</span>Trilha de Auditoria (Log)</div><div class="gloss-def">Registro automático de tudo que acontece nos sistemas: quem acessou, quando, o que fez. É como a câmera de segurança digital — tudo fica gravado e não pode ser apagado! 🎥</div></div>
+    <div class="gloss-item"><div class="gloss-term"><span class="gloss-icon">🔗</span>VLAN</div><div class="gloss-def">Rede virtual que separa logicamente os computadores mesmo estando no mesmo cabo. Serve para isolar a rede de atendimento ao público da rede administrativa. Paredes invisíveis dentro da rede! 🏠</div></div>
+    <div class="gloss-item"><div class="gloss-term"><span class="gloss-icon">🪲</span>Vulnerabilidade Crítica</div><div class="gloss-def">Uma falha grave em algum software ou sistema que hackers podem explorar para invadir ou roubar dados. Precisa ser corrigida em até 30 dias (ou imediatamente se já estiver sendo explorada!). 🆘</div></div>
+    <div class="gloss-item"><div class="gloss-term"><span class="gloss-icon">🔋</span>UPS / SAI (Nobreak)</div><div class="gloss-def">Dispositivo que mantém os equipamentos ligados quando a energia elétrica cai, dando tempo para salvar os dados e desligar tudo corretamente. É o "gerador de emergência" dos computadores! ⚡</div></div>
+  </div>
+
+  <!-- MODELOS DE RELATÓRIOS -->
+  <div class="modelos-section">
+    <div class="sec-header">
+      <h2>📋 Modelos de Relatórios Obrigatórios</h2>
+      <p>Etapas 1 e 2 · Provimento CNJ nº 213/2026 · 7 modelos prontos para uso</p>
+    </div>
+
+    <div class="modelos-index">
+      <div class="alert alert-danger" style="margin-bottom:20px;">
+        <span class="alert-icon">🚨</span>
+        <div>As Etapas 1 e 2 são <strong>sequenciais e cumulativas</strong>. Cada documento produzido deve ser declarado <strong>individualmente no Sistema Justiça Aberta</strong>. A declaração da Etapa 2 só pode ser feita após o registro integral da Etapa 1. <strong>Guarde todos os documentos por no mínimo 5 anos.</strong></div>
+      </div>
+
+      <h3>📑 Índice — 7 Modelos das Etapas 1 e 2</h3>
+      <p style="font-size:13px;color:var(--gray-600);margin-bottom:14px;font-weight:600;">📌 ETAPA 1 — Governança, Estruturação Organizacional e Conformidade Legal</p>
+      <div class="modelos-list">
+        <a href="#modelo01" class="modelo-index-item">
+          <span class="modelo-badge">Modelo 01</span>
+          <div><div class="modelo-index-title">🗂️ Inventário de Ativos Tecnológicos</div><div class="modelo-index-meta">Anexo IV, item 1.7 · Art. 6º, III</div></div>
+          <span class="modelo-index-tag">Todas as Classes</span>
+        </a>
+        <a href="#modelo02" class="modelo-index-item">
+          <span class="modelo-badge">Modelo 02</span>
+          <div><div class="modelo-index-title">🛡️ Registro de Operações LGPD</div><div class="modelo-index-meta">Art. 7º §1º · Anexo III, 4.8 · Item 1.4</div></div>
+          <span class="modelo-index-tag">Todas as Classes</span>
+        </a>
+        <a href="#modelo03" class="modelo-index-item">
+          <span class="modelo-badge">Modelo 03</span>
+          <div><div class="modelo-index-title">🚨 Comunicação de Incidente Crítico</div><div class="modelo-index-meta">Art. 11 §1º · Itens 1.5 / 1.6</div></div>
+          <span class="modelo-index-tag">Prazo: 72h / meta 24h</span>
+        </a>
+        <a href="#modelo04" class="modelo-index-item">
+          <span class="modelo-badge">Modelo 04</span>
+          <div><div class="modelo-index-title">🎓 Registro de Capacitação</div><div class="modelo-index-meta">Anexo I, item 7 · Etapa 1</div></div>
+          <span class="modelo-index-tag">Todas as Classes</span>
+        </a>
+        <a href="#modelo05" class="modelo-index-item">
+          <span class="modelo-badge">Modelo 05</span>
+          <div><div class="modelo-index-title">📄 Relatório Simplificado de Implementação</div><div class="modelo-index-meta">Art. 4º §5-6 · Anexo IV, VII</div></div>
+          <span class="modelo-index-tag">Exclusivo Classe 1</span>
+        </a>
+        <a href="#modelo06" class="modelo-index-item">
+          <span class="modelo-badge">Modelo 06</span>
+          <div><div class="modelo-index-title">✅ Declaração de Conclusão — Etapa 1</div><div class="modelo-index-meta">Anexo IV, item 1.9 · Art. 17</div></div>
+          <span class="modelo-index-tag">Registrar no Justiça Aberta</span>
+        </a>
+      </div>
+      <p style="font-size:13px;color:var(--gray-600);margin-bottom:14px;font-weight:600;">🏗️ ETAPA 2 — Infraestrutura e Continuidade Operacional</p>
+      <div class="modelos-list">
+        <a href="#modelo07" class="modelo-index-item">
+          <span class="modelo-badge">Modelo 07</span>
+          <div><div class="modelo-index-title">✅ Declaração de Conclusão — Etapa 2</div><div class="modelo-index-meta">Anexo IV, item 2.9 · Art. 17</div></div>
+          <span class="modelo-index-tag">Registrar no Justiça Aberta</span>
+        </a>
+      </div>
+      <div class="alert alert-info" style="margin-top:6px;margin-bottom:0;">
+        <span class="alert-icon">📌</span>
+        <div><strong>Nota:</strong> PCN, PRD, laudo de aterramento (ART) e documento de arquitetura tecnológica são documentos técnicos elaborados livremente — não há formulário padronizado no Provimento para eles. Os modelos acima cobrem todos os relatórios e declarações formalmente exigidos nas Etapas 1 e 2.</div>
+      </div>
+    </div>
+
+    <!-- MODELO 01 -->
+    <div class="modelo-card" id="modelo01">
+      <div class="modelo-card-header">
+        <span class="m-num">Modelo 01 · Etapa 1 · Item 1.7</span>
+        <div>
+          <h3>🗂️ Inventário de Ativos Tecnológicos</h3>
+          <div class="m-meta">Base legal: Anexo IV, item 1.7 · Art. 6º, III — Integra o dossiê técnico</div>
+        </div>
+      </div>
+      <div class="modelo-form">
+        <p style="font-size:13px;text-align:center;font-weight:700;color:var(--navy);margin-bottom:16px;">Inventário de Ativos Tecnológicos<br><span style="font-weight:400;color:var(--gray-600);">Provimento CNJ nº 213/2026 · Anexo IV, item 1.7 · Etapa 1 — Item 1.7</span></p>
+        <div class="form-grid">
+          <div class="form-field"><label>Serventia</label><input type="text" placeholder="Nome da serventia" /></div>
+          <div class="form-field"><label>CNS nº</label><input type="text" placeholder="Número" /></div>
+          <div class="form-field"><label>Classe / Subclasse</label><input type="text" placeholder="Ex: Classe 2 / Subclasse A" /></div>
+          <div class="form-field"><label>Responsável técnico</label><input type="text" placeholder="Nome" /></div>
+          <div class="form-field"><label>Data do levantamento</label><input type="date" /></div>
+          <div class="form-field"><label>Próxima revisão</label><input type="date" /></div>
+        </div>
+        <h4>1. Hardware</h4>
+        <div style="overflow-x:auto;"><table><thead><tr><th>#</th><th>Equipamento</th><th>Marca/Modelo</th><th>Patrimônio</th><th>Função</th><th>Estado</th></tr></thead><tbody>
+          <tr><td>01</td><td><input type="text" style="width:100%;border:none;background:transparent;font-size:13px;"/></td><td><input type="text" style="width:100%;border:none;background:transparent;font-size:13px;"/></td><td><input type="text" style="width:80px;border:none;background:transparent;font-size:13px;"/></td><td><input type="text" style="width:100%;border:none;background:transparent;font-size:13px;"/></td><td><input type="text" style="width:80px;border:none;background:transparent;font-size:13px;"/></td></tr>
+          <tr><td>02</td><td><input type="text" style="width:100%;border:none;background:transparent;font-size:13px;"/></td><td><input type="text" style="width:100%;border:none;background:transparent;font-size:13px;"/></td><td><input type="text" style="width:80px;border:none;background:transparent;font-size:13px;"/></td><td><input type="text" style="width:100%;border:none;background:transparent;font-size:13px;"/></td><td><input type="text" style="width:80px;border:none;background:transparent;font-size:13px;"/></td></tr>
+          <tr><td>03</td><td><input type="text" style="width:100%;border:none;background:transparent;font-size:13px;"/></td><td><input type="text" style="width:100%;border:none;background:transparent;font-size:13px;"/></td><td><input type="text" style="width:80px;border:none;background:transparent;font-size:13px;"/></td><td><input type="text" style="width:100%;border:none;background:transparent;font-size:13px;"/></td><td><input type="text" style="width:80px;border:none;background:transparent;font-size:13px;"/></td></tr>
+        </tbody></table></div>
+        <h4>2. Softwares e Licenças</h4>
+        <div class="alert alert-warning" style="margin-bottom:10px;"><span class="alert-icon">⚠️</span><div>Softwares EOL são proibidos pelo art. 4º, §3º. Devem ser substituídos antes da declaração da Etapa 1.</div></div>
+        <div style="overflow-x:auto;"><table><thead><tr><th>#</th><th>Software</th><th>Versão</th><th>Licença válida até</th><th>Suporte ativo?</th><th>Fornecedor</th></tr></thead><tbody>
+          <tr><td>01</td><td><input type="text" style="width:100%;border:none;background:transparent;font-size:13px;"/></td><td><input type="text" style="width:60px;border:none;background:transparent;font-size:13px;"/></td><td><input type="date" style="border:none;background:transparent;font-size:12px;"/></td><td style="text-align:center;"><label><input type="checkbox"/> Sim</label> <label><input type="checkbox"/> EOL</label></td><td><input type="text" style="width:100%;border:none;background:transparent;font-size:13px;"/></td></tr>
+          <tr><td>02</td><td><input type="text" style="width:100%;border:none;background:transparent;font-size:13px;"/></td><td><input type="text" style="width:60px;border:none;background:transparent;font-size:13px;"/></td><td><input type="date" style="border:none;background:transparent;font-size:12px;"/></td><td style="text-align:center;"><label><input type="checkbox"/> Sim</label> <label><input type="checkbox"/> EOL</label></td><td><input type="text" style="width:100%;border:none;background:transparent;font-size:13px;"/></td></tr>
+        </tbody></table></div>
+        <h4>3. Certificados Digitais</h4>
+        <div style="overflow-x:auto;"><table><thead><tr><th>#</th><th>Certificado</th><th>Titular</th><th>Emissora (AC)</th><th>Validade</th><th>Status</th></tr></thead><tbody>
+          <tr><td>01</td><td><input type="text" style="width:100%;border:none;background:transparent;font-size:13px;"/></td><td><input type="text" style="width:100%;border:none;background:transparent;font-size:13px;"/></td><td><input type="text" style="width:100%;border:none;background:transparent;font-size:13px;"/></td><td><input type="date" style="border:none;background:transparent;font-size:12px;"/></td><td><input type="text" style="width:80px;border:none;background:transparent;font-size:13px;"/></td></tr>
+        </tbody></table></div>
+        <h4>4. Contratos de TI em Vigor</h4>
+        <div class="alert alert-warning" style="margin-bottom:10px;"><span class="alert-icon">📌</span><div>Contratos sem as cláusulas do art. 13, §6º devem ser aditados antes da declaração do item 1.8.</div></div>
+        <div style="overflow-x:auto;"><table><thead><tr><th>#</th><th>Fornecedor</th><th>Objeto</th><th>Vigência</th><th>Cláusulas LGPD/Reversib./Portab.?</th></tr></thead><tbody>
+          <tr><td>01</td><td><input type="text" style="width:100%;border:none;background:transparent;font-size:13px;"/></td><td><input type="text" style="width:100%;border:none;background:transparent;font-size:13px;"/></td><td><input type="text" style="width:100px;border:none;background:transparent;font-size:13px;"/></td><td style="text-align:center;"><label><input type="checkbox"/> Sim</label> <label><input type="checkbox"/> Pendente</label></td></tr>
+        </tbody></table></div>
+        <div class="assinatura-row">
+          <div class="assinatura-box">Titular / Interino / Interventor<br><em>Nome, assinatura e carimbo</em></div>
+          <div class="assinatura-box">Responsável Técnico<br><em>Nome e assinatura</em></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODELO 02 -->
+    <div class="modelo-card" id="modelo02">
+      <div class="modelo-card-header">
+        <span class="m-num">Modelo 02 · Etapa 1 · Item 1.4</span>
+        <div>
+          <h3>🛡️ Registro de Operações de Tratamento de Dados Pessoais (LGPD)</h3>
+          <div class="m-meta">Base legal: Art. 7º, §1º · Anexo III, item 4.8 · Anexo IV, item 1.4 · Lei nº 13.709/2018</div>
+        </div>
+      </div>
+      <div class="modelo-form">
+        <div class="form-grid">
+          <div class="form-field form-full"><label>Serventia (Controladora)</label><input type="text" placeholder="Nome da serventia" /></div>
+          <div class="form-field"><label>CNS nº</label><input type="text" /></div>
+          <div class="form-field"><label>Titular da delegação (Controlador)</label><input type="text" /></div>
+          <div class="form-field"><label>Encarregado/DPO (se designado)</label><input type="text" /></div>
+          <div class="form-field"><label>Data de elaboração</label><input type="date" /></div>
+          <div class="form-field"><label>Última atualização</label><input type="date" /></div>
+        </div>
+        <h4>Mapa de Operações de Tratamento</h4>
+        <div style="overflow-x:auto;"><table><thead><tr><th>#</th><th>Categoria de Dados</th><th>Finalidade</th><th>Base Legal</th><th>Prazo de Guarda</th><th>Quem Acessa</th><th>Proteção</th></tr></thead><tbody>
+          <tr><td>01</td><td>Identificação pessoal (nome, CPF, RG)</td><td>Atos notariais/registrais</td><td>Art. 7º, II — Obrig. legal</td><td>Permanente</td><td>Partes, Poder Público</td><td>Controle acesso, criptografia</td></tr>
+          <tr><td>02</td><td><input type="text" style="width:100%;border:none;background:transparent;font-size:13px;" placeholder="Dados de contato"/></td><td><input type="text" style="width:100%;border:none;background:transparent;font-size:13px;"/></td><td><input type="text" style="width:100%;border:none;background:transparent;font-size:13px;"/></td><td><input type="text" style="width:80px;border:none;background:transparent;font-size:13px;"/></td><td><input type="text" style="width:100%;border:none;background:transparent;font-size:13px;"/></td><td><input type="text" style="width:100%;border:none;background:transparent;font-size:13px;"/></td></tr>
+          <tr><td>06</td><td>Logs e trilhas de auditoria</td><td>Rastreabilidade legal</td><td>Art. 7º, II</td><td>Mín. 5 anos</td><td>Resp. técnico, Corregedoria</td><td>Imutabilidade, criptografia</td></tr>
+        </tbody></table></div>
+        <div class="assinatura-row">
+          <div class="assinatura-box">Controlador de Dados (Titular)<br><em>Assinatura obrigatória</em></div>
+          <div class="assinatura-box">Encarregado / DPO (se designado)</div>
+        </div>
+        <div class="alert alert-info" style="margin-top:14px;margin-bottom:0;"><span class="alert-icon">📌</span><div>Manter atualizado e disponível à ANPD e à Corregedoria a qualquer tempo.</div></div>
+      </div>
+    </div>
+
+    <!-- MODELO 03 -->
+    <div class="modelo-card" id="modelo03">
+      <div class="modelo-card-header">
+        <span class="m-num">Modelo 03 · Etapas 1 e 2 · Itens 1.5 e 1.6</span>
+        <div>
+          <h3>🚨 Comunicação de Incidente Crítico à Corregedoria</h3>
+          <div class="m-meta">Base legal: Art. 11, §1º · Prazo: 72h · Meta: 24h</div>
+        </div>
+      </div>
+      <div class="modelo-form">
+        <div class="alert alert-danger" style="margin-bottom:16px;"><span class="alert-icon">⏰</span><div>Encaminhar à <strong>Corregedoria competente em até 72h</strong> da ciência. Meta de excelência: <strong>24h</strong>. Se houver risco a dados pessoais, comunicar também à <strong>ANPD</strong>.</div></div>
+        <div class="form-grid">
+          <div class="form-field"><label>Serventia</label><input type="text" /></div>
+          <div class="form-field"><label>CNS nº</label><input type="text" /></div>
+          <div class="form-field"><label>Titular responsável</label><input type="text" /></div>
+          <div class="form-field"><label>Corregedoria destinatária</label><input type="text" /></div>
+          <div class="form-field"><label>Data/hora da ciência</label><input type="datetime-local" /></div>
+          <div class="form-field"><label>Data/hora desta comunicação</label><input type="datetime-local" /></div>
+        </div>
+        <h4>1. Classificação do Incidente</h4>
+        <ul class="checkbox-list">
+          <li><input type="checkbox"/> Acesso não autorizado a sistemas ou dados</li>
+          <li><input type="checkbox"/> Ransomware / criptografia maliciosa</li>
+          <li><input type="checkbox"/> Perda ou destruição de dados críticos</li>
+          <li><input type="checkbox"/> Indisponibilidade prolongada de sistemas</li>
+          <li><input type="checkbox"/> Vazamento ou divulgação indevida de dados pessoais</li>
+          <li><input type="checkbox"/> Falha crítica de infraestrutura (elétrica, conectividade)</li>
+          <li><input type="checkbox"/> Outro: <input type="text" style="margin-left:8px;border:none;border-bottom:1px solid var(--gray-300);background:transparent;font-size:13px;width:200px;" /></li>
+        </ul>
+        <h4>2. Descrição do Incidente</h4>
+        <div class="form-field"><textarea rows="4" placeholder="Descreva o incidente em detalhes..."></textarea></div>
+        <h4>3. Medidas de Contenção Adotadas</h4>
+        <div class="form-field"><textarea rows="3" placeholder="Descreva as ações tomadas imediatamente..."></textarea></div>
+        <h4>4. Dados Pessoais Afetados</h4>
+        <ul class="checkbox-list">
+          <li><input type="checkbox"/> Não há dados pessoais afetados</li>
+          <li><input type="checkbox"/> Sim — natureza dos dados: <input type="text" style="margin-left:8px;border:none;border-bottom:1px solid var(--gray-300);background:transparent;font-size:13px;width:200px;" /></li>
+        </ul>
+        <div class="assinatura-row">
+          <div class="assinatura-box">Titular / Interino / Interventor<br><em>Assinatura obrigatória</em></div>
+          <div class="assinatura-box">Responsável Técnico<br><em>Nome e contato</em></div>
+        </div>
+        <div class="alert alert-info" style="margin-top:14px;margin-bottom:0;"><span class="alert-icon">📌</span><div>Após encerramento: elaborar Relatório de Análise de Causa Raiz e Lições Aprendidas (art. 11, §2º).</div></div>
+      </div>
+    </div>
+
+    <!-- MODELO 04 -->
+    <div class="modelo-card" id="modelo04">
+      <div class="modelo-card-header">
+        <span class="m-num">Modelo 04 · Etapa 1 · Anexo I, item 7</span>
+        <div>
+          <h3>🎓 Registro de Capacitação em Segurança da Informação</h3>
+          <div class="m-meta">Base legal: Anexo I, item 7 — Treinamento periódico obrigatório com registro formal</div>
+        </div>
+      </div>
+      <div class="modelo-form">
+        <div class="form-grid">
+          <div class="form-field"><label>Serventia</label><input type="text" /></div>
+          <div class="form-field"><label>CNS nº</label><input type="text" /></div>
+          <div class="form-field form-full"><label>Título da capacitação</label><input type="text" placeholder="Ex: Treinamento em Segurança da Informação — Prov. CNJ 213/2026" /></div>
+          <div class="form-field"><label>Data</label><input type="date" /></div>
+          <div class="form-field"><label>Carga horária / Formato</label><input type="text" placeholder="Ex: 4h · Presencial" /></div>
+          <div class="form-field"><label>Ministrada por / Plataforma</label><input type="text" /></div>
+        </div>
+        <h4>Conteúdo Abordado</h4>
+        <ul class="checkbox-list">
+          <li><input type="checkbox"/> Política de Segurança da Informação da serventia</li>
+          <li><input type="checkbox"/> Operação segura dos sistemas (senhas, MFA, acessos)</li>
+          <li><input type="checkbox"/> Rotinas de backup e recuperação</li>
+          <li><input type="checkbox"/> Reconhecimento e comunicação de incidentes</li>
+          <li><input type="checkbox"/> Proteção de dados pessoais (LGPD)</li>
+          <li><input type="checkbox"/> Outro: <input type="text" style="margin-left:8px;border:none;border-bottom:1px solid var(--gray-300);background:transparent;font-size:13px;width:200px;" /></li>
+        </ul>
+        <h4>Lista de Presença</h4>
+        <table><thead><tr><th>#</th><th>Nome Completo</th><th>Função</th><th>Assinatura</th></tr></thead><tbody>
+          <tr><td>01</td><td><input type="text" style="width:100%;border:none;background:transparent;font-size:13px;"/></td><td><input type="text" style="width:120px;border:none;background:transparent;font-size:13px;"/></td><td></td></tr>
+          <tr><td>02</td><td><input type="text" style="width:100%;border:none;background:transparent;font-size:13px;"/></td><td><input type="text" style="width:120px;border:none;background:transparent;font-size:13px;"/></td><td></td></tr>
+          <tr><td>03</td><td><input type="text" style="width:100%;border:none;background:transparent;font-size:13px;"/></td><td><input type="text" style="width:120px;border:none;background:transparent;font-size:13px;"/></td><td></td></tr>
+          <tr><td>04</td><td><input type="text" style="width:100%;border:none;background:transparent;font-size:13px;"/></td><td><input type="text" style="width:120px;border:none;background:transparent;font-size:13px;"/></td><td></td></tr>
+        </tbody></table>
+        <div class="assinatura-row">
+          <div class="assinatura-box">Titular / Interino / Interventor</div>
+          <div class="assinatura-box">Instrutor / Responsável pela Capacitação</div>
+        </div>
+        <div class="alert alert-info" style="margin-top:14px;margin-bottom:0;"><span class="alert-icon">📌</span><div>Arquivar certificados e materiais didáticos como evidência no dossiê técnico.</div></div>
+      </div>
+    </div>
+
+    <!-- MODELO 05 -->
+    <div class="modelo-card" id="modelo05">
+      <div class="modelo-card-header">
+        <span class="m-num">Modelo 05 · Etapas 1 e 2 · Art. 4º §5-6</span>
+        <div>
+          <h3>📄 Relatório Simplificado de Implementação</h3>
+          <div class="m-meta">Base legal: Art. 4º, §5º e §6º · Anexo IV, item VII — Substitui o dossiê técnico para a Classe 1</div>
+        </div>
+      </div>
+      <div class="modelo-form">
+        <div class="form-grid">
+          <div class="form-field"><label>Serventia</label><input type="text" /></div>
+          <div class="form-field"><label>CNS nº</label><input type="text" /></div>
+          <div class="form-field"><label>Classe / Subclasse</label><input type="text" placeholder="Classe 1 — Subclasse: ___" /></div>
+          <div class="form-field"><label>Etapa e item do Anexo IV</label><input type="text" placeholder="Etapa ___ · Item ___.___" /></div>
+          <div class="form-field"><label>Data de elaboração</label><input type="date" /></div>
+          <div class="form-field"><label>Responsável técnico</label><input type="text" /></div>
+        </div>
+        <h4>a) Identificação do Requisito Normativo</h4>
+        <div class="form-field"><textarea rows="3" placeholder="Identifique o requisito normativo que está sendo atendido..."></textarea></div>
+        <h4>b) Solução Técnica Adotada</h4>
+        <div class="form-field"><textarea rows="3" placeholder="Descreva a solução técnica implementada..."></textarea></div>
+        <h4>c) Demonstração de Equivalência Funcional</h4>
+        <div class="form-field"><textarea rows="3" placeholder="Demonstre como a solução atende funcionalmente ao requisito..."></textarea></div>
+        <h4>d) Evidências Disponíveis para Fiscalização</h4>
+        <table><thead><tr><th>Tipo</th><th>Descrição</th><th>Local de Guarda</th></tr></thead><tbody>
+          <tr><td>Contrato de TI / NF</td><td><input type="text" style="width:100%;border:none;background:transparent;font-size:13px;"/></td><td><input type="text" style="width:100%;border:none;background:transparent;font-size:13px;"/></td></tr>
+          <tr><td>Print / Captura de tela</td><td><input type="text" style="width:100%;border:none;background:transparent;font-size:13px;"/></td><td><input type="text" style="width:100%;border:none;background:transparent;font-size:13px;"/></td></tr>
+          <tr><td>Relatório de fornecedor</td><td><input type="text" style="width:100%;border:none;background:transparent;font-size:13px;"/></td><td><input type="text" style="width:100%;border:none;background:transparent;font-size:13px;"/></td></tr>
+        </tbody></table>
+        <h4>e) Declaração de Responsabilidade</h4>
+        <div class="alert alert-warning"><span class="alert-icon">📜</span><div>Declaro, sob as penas da lei, que as informações acima são verdadeiras, que a solução está efetivamente implementada, e que as evidências estão disponíveis para fiscalização, mantidas por no mínimo <strong>5 anos</strong>, nos termos do art. 4º, §6º e Anexo IV, item VII do Provimento CNJ nº 213/2026.</div></div>
+        <div class="assinatura-row">
+          <div class="assinatura-box">Titular / Interino / Interventor<br><em>Nome, assinatura e carimbo — obrigatório</em></div>
+          <div class="assinatura-box">Responsável Técnico (se houver)</div>
+        </div>
+        <div class="alert alert-info" style="margin-top:14px;margin-bottom:0;"><span class="alert-icon">📌</span><div>Elaborar um relatório por requisito implementado. Para Classes 2 e 3, o dossiê técnico completo com hash assinado digitalmente é obrigatório.</div></div>
+      </div>
+    </div>
+
+    <!-- MODELO 06 -->
+    <div class="modelo-card" id="modelo06">
+      <div class="modelo-card-header">
+        <span class="m-num">Modelo 06 · Etapa 1 · Item 1.9 · Art. 17</span>
+        <div>
+          <h3>✅ Declaração de Conclusão da Etapa 1</h3>
+          <div class="m-meta">Governança, Estruturação Organizacional e Conformidade Legal</div>
+        </div>
+      </div>
+      <div class="modelo-form">
+        <div class="alert alert-danger" style="margin-bottom:16px;"><span class="alert-icon">⚠️</span><div>Só produzir após <strong>cumprimento integral dos itens 1.1 a 1.8</strong>. Registrar no <strong>Sistema Justiça Aberta</strong>. Somente então iniciar a Etapa 2. Declaração falsa = penalidades legais.</div></div>
+        <div class="form-grid">
+          <div class="form-field form-full"><label>Serventia</label><input type="text" /></div>
+          <div class="form-field"><label>CNS nº</label><input type="text" /></div>
+          <div class="form-field"><label>Classe / Subclasse</label><input type="text" /></div>
+          <div class="form-field"><label>Data de conclusão da Etapa 1</label><input type="date" /></div>
+          <div class="form-field"><label>Data desta declaração</label><input type="date" /></div>
+        </div>
+        <h4>Confirmação Individual dos Requisitos Cumpridos</h4>
+        <div style="overflow-x:auto;"><table class="confirmacao-table"><thead><tr><th>Item</th><th>Requisito</th><th>Cumprido?</th><th>Data</th><th>Decl. JA?</th></tr></thead><tbody>
+          <tr><td class="item-ref">1.1</td><td>Designação formal do responsável técnico, controlador de dados e DPO</td><td><label><input type="checkbox"/> Sim</label></td><td><input type="date" style="border:none;background:transparent;font-size:12px;"/></td><td><label><input type="checkbox"/> Sim</label></td></tr>
+          <tr><td class="item-ref">1.2</td><td>Política de Segurança elaborada, aprovada e divulgada</td><td><label><input type="checkbox"/> Sim</label></td><td><input type="date" style="border:none;background:transparent;font-size:12px;"/></td><td><label><input type="checkbox"/> Sim</label></td></tr>
+          <tr><td class="item-ref">1.3</td><td>Autenticação individualizada e MFA implementados</td><td><label><input type="checkbox"/> Sim</label></td><td><input type="date" style="border:none;background:transparent;font-size:12px;"/></td><td><label><input type="checkbox"/> Sim</label></td></tr>
+          <tr><td class="item-ref">1.4</td><td>Registro de operações de tratamento de dados (LGPD) instituído</td><td><label><input type="checkbox"/> Sim</label></td><td><input type="date" style="border:none;background:transparent;font-size:12px;"/></td><td><label><input type="checkbox"/> Sim</label></td></tr>
+          <tr><td class="item-ref">1.5</td><td>Procedimento de comunicação de incidentes críticos formalizado</td><td><label><input type="checkbox"/> Sim</label></td><td><input type="date" style="border:none;background:transparent;font-size:12px;"/></td><td><label><input type="checkbox"/> Sim</label></td></tr>
+          <tr><td class="item-ref">1.6</td><td>Meta de comunicação em até 24h instituída</td><td><label><input type="checkbox"/> Sim</label></td><td><input type="date" style="border:none;background:transparent;font-size:12px;"/></td><td><label><input type="checkbox"/> Sim</label></td></tr>
+          <tr><td class="item-ref">1.7</td><td>Inventário completo de ativos tecnológicos concluído</td><td><label><input type="checkbox"/> Sim</label></td><td><input type="date" style="border:none;background:transparent;font-size:12px;"/></td><td><label><input type="checkbox"/> Sim</label></td></tr>
+          <tr><td class="item-ref">1.8</td><td>Licenças regularizadas e contratos revisados/aditados</td><td><label><input type="checkbox"/> Sim</label></td><td><input type="date" style="border:none;background:transparent;font-size:12px;"/></td><td><label><input type="checkbox"/> Sim</label></td></tr>
+        </tbody></table></div>
+        <h4>Declaração</h4>
+        <div class="alert alert-warning"><span class="alert-icon">📜</span><div>Declaro, na qualidade de titular da delegação / interino / interventor, sob as penas da lei, que todos os requisitos da <strong>Etapa 1 do Anexo IV do Provimento CNJ nº 213/2026</strong> foram integralmente cumpridos, as evidências estão disponíveis para fiscalização correicional e procedo ao registro no Sistema Justiça Aberta.</div></div>
+        <div class="form-grid" style="margin-top:14px;">
+          <div class="form-field"><label>Protocolo no Justiça Aberta</label><input type="text" /></div>
+          <div class="form-field"><label>Data</label><input type="date" /></div>
+        </div>
+        <div class="assinatura-row">
+          <div class="assinatura-box">Titular / Interino / Interventor<br><em>Nome, assinatura e carimbo — obrigatório</em></div>
+          <div class="assinatura-box">Local e Data<br><em>___________________________, ___/___/______</em></div>
+        </div>
+        <div class="alert alert-success" style="margin-top:14px;margin-bottom:0;"><span class="alert-icon">✅</span><div>Após este registro no Justiça Aberta, você está <strong>autorizado a iniciar a Etapa 2</strong>.</div></div>
+      </div>
+    </div>
+
+    <!-- MODELO 07 -->
+    <div class="modelo-card" id="modelo07">
+      <div class="modelo-card-header">
+        <span class="m-num">Modelo 07 · Etapa 2 · Item 2.9 · Art. 17</span>
+        <div>
+          <h3>✅ Declaração de Conclusão da Etapa 2</h3>
+          <div class="m-meta">Infraestrutura e Continuidade Operacional</div>
+        </div>
+      </div>
+      <div class="modelo-form">
+        <div class="alert alert-danger" style="margin-bottom:16px;"><span class="alert-icon">⚠️</span><div>Só produzir após <strong>cumprimento integral dos itens 2.1 a 2.8 E</strong> após a declaração da Etapa 1 já registrada no Justiça Aberta. As etapas <strong>não podem ser declaradas simultaneamente</strong>.</div></div>
+        <div class="form-grid">
+          <div class="form-field form-full"><label>Serventia</label><input type="text" /></div>
+          <div class="form-field"><label>CNS nº</label><input type="text" /></div>
+          <div class="form-field"><label>Classe / Subclasse</label><input type="text" /></div>
+          <div class="form-field"><label>Declaração Etapa 1 registrada em</label><input type="date" /></div>
+          <div class="form-field"><label>Protocolo JA (Etapa 1)</label><input type="text" /></div>
+          <div class="form-field"><label>Data de conclusão da Etapa 2</label><input type="date" /></div>
+          <div class="form-field"><label>Data desta declaração</label><input type="date" /></div>
+        </div>
+        <h4>Confirmação Individual dos Requisitos Cumpridos</h4>
+        <div style="overflow-x:auto;"><table class="confirmacao-table"><thead><tr><th>Item</th><th>Requisito</th><th>Cumprido?</th><th>Data</th><th>Decl. JA?</th></tr></thead><tbody>
+          <tr><td class="item-ref">2.1</td><td>Infraestrutura energética: fonte estável, aterramento com laudo ART e SAI/UPS (mín. 30 min)</td><td><label><input type="checkbox"/> Sim</label></td><td><input type="date" style="border:none;background:transparent;font-size:12px;"/></td><td><label><input type="checkbox"/> Sim</label></td></tr>
+          <tr><td class="item-ref">2.2</td><td>Plano de contingência energética formalizado</td><td><label><input type="checkbox"/> Sim</label></td><td><input type="date" style="border:none;background:transparent;font-size:12px;"/></td><td><label><input type="checkbox"/> Sim</label></td></tr>
+          <tr><td class="item-ref">2.3</td><td>Ambiente físico adequado: acesso restrito, proteção contra incêndio, inundações e temperatura</td><td><label><input type="checkbox"/> Sim</label></td><td><input type="date" style="border:none;background:transparent;font-size:12px;"/></td><td><label><input type="checkbox"/> Sim</label></td></tr>
+          <tr><td class="item-ref">2.4</td><td>Conectividade compatível com a classe, roteador, switch e múltiplos links</td><td><label><input type="checkbox"/> Sim</label></td><td><input type="date" style="border:none;background:transparent;font-size:12px;"/></td><td><label><input type="checkbox"/> Sim</label></td></tr>
+          <tr><td class="item-ref">2.5</td><td>PCN e PRD formalizados com RTO, RPO e avaliação de riscos</td><td><label><input type="checkbox"/> Sim</label></td><td><input type="date" style="border:none;background:transparent;font-size:12px;"/></td><td><label><input type="checkbox"/> Sim</label></td></tr>
+          <tr><td class="item-ref">2.6</td><td>Equipamentos adequados e suporte técnico contínuo garantidos</td><td><label><input type="checkbox"/> Sim</label></td><td><input type="date" style="border:none;background:transparent;font-size:12px;"/></td><td><label><input type="checkbox"/> Sim</label></td></tr>
+          <tr><td class="item-ref">2.7</td><td>Proteção de endpoint instalada em todos os dispositivos</td><td><label><input type="checkbox"/> Sim</label></td><td><input type="date" style="border:none;background:transparent;font-size:12px;"/></td><td><label><input type="checkbox"/> Sim</label></td></tr>
+          <tr><td class="item-ref">2.8</td><td>Documento de arquitetura tecnológica formalizado</td><td><label><input type="checkbox"/> Sim</label></td><td><input type="date" style="border:none;background:transparent;font-size:12px;"/></td><td><label><input type="checkbox"/> Sim</label></td></tr>
+        </tbody></table></div>
+        <h4>RTO e RPO Definidos no PCN/PRD</h4>
+        <table><thead><tr><th>Parâmetro</th><th>Valor Definido</th><th>Limite Legal</th><th>Atende?</th></tr></thead><tbody>
+          <tr><td>RTO — Tempo máximo de restabelecimento</td><td><input type="text" style="width:80px;border:none;background:transparent;font-size:13px;" placeholder="___ horas"/> horas</td><td>Cl.3: 8h · Cl.2 e 1: 24h</td><td><label><input type="checkbox"/> Sim</label> <label><input type="checkbox"/> Não</label></td></tr>
+          <tr><td>RPO — Máximo de dados admissível</td><td><input type="text" style="width:80px;border:none;background:transparent;font-size:13px;" placeholder="___ horas"/> horas</td><td>Cl.3: 4h · Cl.2: 12h · Cl.1: 24h</td><td><label><input type="checkbox"/> Sim</label> <label><input type="checkbox"/> Não</label></td></tr>
+        </tbody></table>
+        <div class="form-grid" style="margin-top:14px;">
+          <div class="form-field"><label>Protocolo no Justiça Aberta</label><input type="text" /></div>
+          <div class="form-field"><label>Data</label><input type="date" /></div>
+        </div>
+        <div class="assinatura-row">
+          <div class="assinatura-box">Titular / Interino / Interventor<br><em>Nome, assinatura e carimbo — obrigatório</em></div>
+          <div class="assinatura-box">Local e Data<br><em>___________________________, ___/___/______</em></div>
+        </div>
+        <div class="alert alert-success" style="margin-top:14px;margin-bottom:0;"><span class="alert-icon">🏆</span><div>Com este registro no Justiça Aberta, as <strong>Etapas 1 e 2 estão formalmente concluídas</strong>. Você está autorizado a iniciar a Etapa 3.</div></div>
+      </div>
+    </div>
+
+  </div><!-- /modelos-section -->
+
+  <!-- SHARE BAR -->
+  <div class="share-bar">
+    <span>📤 Compartilhar:</span>
+    <button class="share-btn btn-dl" onclick="window.print()">⬇️ Imprimir / Salvar PDF</button>
+    <a class="share-btn btn-wa" href="https://wa.me/?text=Guia+Prático+Prov.+CNJ+213/2026+-+ANOREGRJ" target="_blank">💬 WhatsApp</a>
+  </div>
+
+</div><!-- /container -->
+
+<footer>
+  <strong>ANOREGRJ — Comissão de Governança Digital e Conformidade Tecnológica</strong><br>
+  Guia elaborado com base no Provimento CNJ nº 213, de 20/02/2026 · DJe/CNJ nº 40/2026
+  <p class="disclaimer">Este material tem caráter orientativo. Consulte sempre a norma oficial e os órgãos competentes para decisões específicas.</p>
+</footer>
+
+<script>
+function toggleItem(row) {
+  row.classList.toggle('open');
+}
+// Open all by default on load
+document.querySelectorAll('.item-row').forEach(r => r.classList.add('open'));
+</script>
+</body>
+</html>
